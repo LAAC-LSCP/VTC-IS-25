@@ -102,3 +102,9 @@ sh run.sh
 This work uses the [segma](https://github.com/arxaqapi/segma) library which is heavely inspired by [pyannote.audio](https://github.com/pyannote/pyannote-audio).
 
 The first version of the [Voice Type Classifier is available here](https://github.com/MarvinLvn/voice-type-classifier).
+
+## To dos:
+
+- [] Add running times
+- [] Add confusion matrices computed on the held-out 
+- [] Better separate instructions for inference (standard usage) from those for training (advanced usage)
