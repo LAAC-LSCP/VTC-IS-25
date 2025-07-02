@@ -105,6 +105,6 @@ The first version of the [Voice Type Classifier is available here](https://githu
 
 ## To dos:
 
-- [] Add running times
+- [] Add running times (CPU & GPU)
 - [] Add confusion matrices computed on the held-out 
 - [] Better separate instructions for inference (standard usage) from those for training (advanced usage)
