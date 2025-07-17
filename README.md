@@ -106,23 +106,7 @@ sh scripts/run.sh
 }
 ```
 
-
 ## Acknowledgement
 This work uses the [segma](https://github.com/arxaqapi/segma) library which is heavely inspired by [pyannote.audio](https://github.com/pyannote/pyannote-audio).
 
 The first version of the [Voice Type Classifier is available here](https://github.com/MarvinLvn/voice-type-classifier).
-
-## Citation
-
-```bibtex
-@misc{kunze2025challengesautomatedprocessingspeech,
-      title={Challenges in Automated Processing of Speech from Child Wearables: The Case of Voice Type Classifier}, 
-      author={Tarek Kunze and Marianne Métais and Hadrien Titeux and Lucas Elbert and Joseph Coffey and Emmanuel Dupoux and Alejandrina Cristia and Marvin Lavechin},
-      year={2025},
-      eprint={2506.11074},
-      archivePrefix={arXiv},
-      primaryClass={eess.AS},
-      url={https://arxiv.org/abs/2506.11074}, 
-}
-```
-
