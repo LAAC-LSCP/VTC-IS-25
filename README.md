@@ -45,29 +45,38 @@ Where `train.txt`, `val.txt` and `test.txt` are list of unique identifiers that 
 
 The structure of a RTTM or a UEM file is best described in [pyannote-database](https://github.com/pyannote/pyannote-database/blob/develop/README.md#segmentation).
 
+### Getting the pre-trained Whisper small encoder
+Before anything can be trained or infered, you'll need to download the weights of the pre-trained Whisper small model using the `save_load_whisper.py` scripts.
+
+```python
+uv run scripts/save_load_whisper.py --model small
+```
+
 ### Training
+The `config.yml` contains most of the variables needed for training. Refer to `segma` for more informations on training a model.
+
 ```sh
 uv run scripts/train.py \
     --config config/config.yml \
-    --model-config config/whisper_vtc_small.yml
+
 ```
 
 ### Inference
+Inference is done using a checkpoint of the model, linking to the corresponding config file used for the trianing and the list of audio files to run thee inference on.
+
 ```sh
 uv run scripts/infer.py \
-    --config config/config.yml \
-	--wavs audio-data \
-    --checkpoint best.ckpt
-	--output predictions \
+    --config model/config.yml \
+	--wavs audios \
+    --checkpoint model/best.ckpt \
+	--output predictions
 ```
 
 
-### Evaluation
-
-
 ### Segment merging (optional)
-Simpy specify the input folder and output folder.
+Simply specify the input folder and output folder.
 For more fine-grained tuning, use the `min-duration-on-s` and `min-duration-off-s` parameters.
+
 ```sh
 uv run scripts/merge_segments.py \
     --folder rttm_folder \
@@ -76,11 +85,11 @@ uv run scripts/merge_segments.py \
 
 
 ### Helper script
-To perform inference, speech segment merging (see merge_segments.py for help or [this pyannote.audio description](https://github.com/pyannote/pyannote-audio/blob/240a7f3ef60bc613169df860b536b10e338dbf3c/pyannote/audio/pipelines/resegmentation.py#L79-L82)) and evaluation in a row, a single bash script is given.
+To perform inference and speech segment merging (see merge_segments.py for help or [this pyannote.audio description](https://github.com/pyannote/pyannote-audio/blob/240a7f3ef60bc613169df860b536b10e338dbf3c/pyannote/audio/pipelines/resegmentation.py#L79-L82)), a single bash script is given.
 
 Simply set the correct variables in the script and run it:
 ```sh
-sh run.sh
+sh scripts/run.sh
 ```
 
 ## Citation

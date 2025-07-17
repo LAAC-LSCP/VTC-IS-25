@@ -94,10 +94,13 @@ if __name__ == "__main__":
                 thresholds=threshold_dict,
             )
     else:
-        wav_files = list(args.wavs.glob("*.wav"))
+        if args.wavs.suffix == ".wav" and args.wavs.is_file():
+            wav_files = [args.wavs]
+        else:    
+            wav_files = list(args.wavs.glob("*.wav"))
         n_files = len(wav_files)
         for i, wav_f in enumerate(wav_files):
-            print(f"[log] - ({i:>{len(str(n_files))}}/{len(n_files)}) - running inference for file: '{wav_f.stem}'")
+            print(f"[log] - ({i:>{len(str(n_files))}}/{n_files}) - running inference for file: '{wav_f.stem}'")
             sliding_prediction(
                 wav_f,
                 model=model,
