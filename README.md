@@ -67,9 +67,9 @@ Inference is done using a checkpoint of the model, linking to the corresponding 
 ```sh
 uv run scripts/infer.py \
     --config model/config.yml \
-	--wavs audios \
+    --wavs audios \
     --checkpoint model/best.ckpt \
-	--output predictions
+    --output predictions
 ```
 
 
