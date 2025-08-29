@@ -95,14 +95,14 @@ sh scripts/run.sh
 ## Citation
 
 ```bibtex
-@misc{kunze2025challengesautomatedprocessingspeech,
-    title={Challenges in Automated Processing of Speech from Child Wearables: The Case of Voice Type Classifier}, 
-    author={Tarek Kunze and Marianne Métais and Hadrien Titeux and Lucas Elbert and Joseph Coffey and Emmanuel Dupoux and Alejandrina Cristia and Marvin Lavechin},
-    year={2025},
-    eprint={2506.11074},
-    archivePrefix={arXiv},
-    primaryClass={eess.AS},
-    url={https://arxiv.org/abs/2506.11074}, 
+@inproceedings{kunze25_interspeech,
+  title     = {{Challenges in Automated Processing of Speech from Child Wearables:  The Case of Voice Type Classifier}},
+  author    = {Tarek Kunze and Marianne Métais and Hadrien Titeux and Lucas Elbert and Joseph Coffey and Emmanuel Dupoux and Alejandrina Cristia and Marvin Lavechin},
+  year      = {2025},
+  booktitle = {{Interspeech 2025}},
+  pages     = {2845--2849},
+  doi       = {10.21437/Interspeech.2025-1962},
+  issn      = {2958-1796},
 }
 ```
 
