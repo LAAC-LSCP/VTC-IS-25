@@ -62,7 +62,7 @@ uv run scripts/train.py \
 ```
 
 ### Inference
-Inference is done using a checkpoint of the model, linking to the corresponding config file used for the trianing and the list of audio files to run thee inference on.
+Inference is done using a checkpoint of the model, linking to the corresponding config file used for the trianing and the list of audio files to run the inference on.
 
 ```sh
 uv run scripts/infer.py \
