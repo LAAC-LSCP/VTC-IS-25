@@ -1,8 +1,7 @@
-echo "not implemented"
-
 audios_path=audios
-output=inference_output
+output=out/$(date +%Y%m%d_%H%M)_inference_output
 
+mkdir -p $output
 uv run scripts/save_load_whisper.py --model small
 
 uv run scripts/infer.py \

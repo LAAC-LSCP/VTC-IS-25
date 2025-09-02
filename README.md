@@ -21,48 +21,15 @@ uv sync
 ### Preparing the data
 The audio files for inference simply needs to lie in a simple repository, the inference script will load them automatically.
 
-For training, the data is loaded in a specific way using [segma](https://github.com/arxaqapi/segma) and its [SegmaFileDataset](https://github.com/arxaqapi/segma/blob/49c1ce4bace130785c7be0e5aab6a8ed3bd0d711/src/segma/data/file_dataset.py#L41-L64) class.
-In short the data needs to have the following structure:
-
-```txt
-dataset_name/
-    ├── rttm/
-    │   └── 0000.rttm
-    │   └── 0001.rttm
-    ├── uem/ (optional)
-    │   └── 0000.uem
-    │   └── 0001.uem
-    ├── wav/
-    │   └── 0000.wav
-    │   └── 0001.wav
-    ├── train.txt
-    ├── val.txt
-    ├── test.txt
-    └── exclude.txt (optional)
-```
-
-Where `train.txt`, `val.txt` and `test.txt` are list of unique identifiers that link the audios (.wav) to their annotation (.rttm).
-
-The structure of a RTTM or a UEM file is best described in [pyannote-database](https://github.com/pyannote/pyannote-database/blob/develop/README.md#segmentation).
-
 ### Getting the pre-trained Whisper small encoder
-Before anything can be trained or infered, you'll need to download the weights of the pre-trained Whisper small model using the `save_load_whisper.py` scripts.
+Before anything, you'll need to download the weights of the pre-trained Whisper small model using the `save_load_whisper.py` scripts.
 
 ```python
 uv run scripts/save_load_whisper.py --model small
 ```
 
-### Training
-The `config.yml` contains most of the variables needed for training. Refer to `segma` for more informations on training a model.
-
-```sh
-uv run scripts/train.py \
-    --config config/config.yml \
-
-```
-
 ### Inference
-Inference is done using a checkpoint of the model, linking to the corresponding config file used for the trianing and the list of audio files to run the inference on.
+Inference is done using a checkpoint of the model, linking the corresponding config file used for training and the list of audio files to run the inference on.
 
 ```sh
 uv run scripts/infer.py \
@@ -71,7 +38,6 @@ uv run scripts/infer.py \
     --checkpoint model/best.ckpt \
     --output predictions
 ```
-
 
 ### Segment merging (optional)
 Simply specify the input folder and output folder.
