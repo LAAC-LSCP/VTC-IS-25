@@ -5,7 +5,7 @@
 > Recordings gathered with child-worn devices promised to revolutionize both fundamental and applied speech sciences by allowing the effortless capture of children's naturalistic speech environment and language production. This promise hinges on speech technologies that can transform the sheer mounds of data thus collected into usable information. This paper demonstrates several obstacles blocking progress by summarizing three years' worth of experiments aimed at improving one fundamental task: Voice Type Classification. Our experiments suggest that improvements in representation features, architecture, and parameter search contribute to only marginal gains in performance. More progress is made by focusing on data relevance and quantity, which highlights the importance of collecting data with appropriate permissions to allow sharing.
 
 ## Description
-This repo contains the script needed to **train** the Whisper-VTC models, perform **inference** on a set of audio files and **evaluate** the models given ground-truth annotations.
+This repo contains the script needed perform **inference** using the Whisper-VTC on a set of audio files.
 
 ## How to use
 Ensure that you have [uv](https://github.com/astral-sh/uv) installed on you system.
